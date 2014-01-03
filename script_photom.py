@@ -4,7 +4,6 @@ import pyfits
 from pyraf import iraf
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.mpl as mpl
 import glob, sys, pdb, os, cPickle
 from photom import photom_class, photom_inspect, photom_reduce, photom_absolute
 

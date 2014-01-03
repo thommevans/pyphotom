@@ -4,8 +4,8 @@ import pdb
 import shutil
 from pyraf import iraf
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
-import matplotlib.mpl as mpl
 import matplotlib.ticker
 iraf.digiphot()
 iraf.apphot()
@@ -480,7 +480,7 @@ def plot( obj ):
     ix = np.argsort( time_from_start )
     xl = time_from_start.min() - 0.05*( time_from_start.max() - time_from_start.min() )
     xu = time_from_start.max() + 0.05*( time_from_start.max()-time_from_start.min() )
-    colormap = mpl.cm.spectral
+    colormap = matplotlib.cm.spectral
     colormap = plt.cm.ScalarMappable( cmap=colormap )
     colormap.set_clim( vmin=0, vmax=1 )
     color_points = np.r_[ 0.1 : 0.9 : 1j*obj.nstars ]

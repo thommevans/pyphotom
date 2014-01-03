@@ -1,8 +1,8 @@
 import cPickle
 from photom import photom_absolute, photom_relative
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
-import matplotlib.mpl as mpl
 import pdb
 
 def Main(obj, ap_size_trials, sky_annulus_trials, sky_dannulus, datapars_gain=None, datapars_readnoise=None, datapars_exposure=None, datapars_obstime=None, datapars_airmass=None, ix_target=None, ix_comparisons=None ):
@@ -17,7 +17,7 @@ def Main(obj, ap_size_trials, sky_annulus_trials, sky_dannulus, datapars_gain=No
     n_sky_annuli = len(sky_annulus_trials)
     scatter_array = np.zeros([n_apertures, n_sky_annuli])
     # Parameters relevant to plotting:
-    colormap = mpl.cm.spectral
+    colormap = matplotlib.cm.spectral
     colormap = plt.cm.ScalarMappable(cmap=colormap)
     colormap.set_clim(vmin=0, vmax=1)
     color_points = np.r_[0.1:0.9:1j*n_sky_annuli]
